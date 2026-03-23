@@ -8,11 +8,11 @@ import Footer from '../components/Footer.astro';
   <Navbar />
 
   <!-- HERO -->
-  <section class="pt-32 pb-24 bg-[#0F172A] relative overflow-hidden">
+  <section id="main-content" class="pt-32 pb-24 bg-[#0F172A] relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-[#10B981]/10 to-transparent"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
-      <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4">Contact Us</p>
-      <h1 class="text-5xl md:text-6xl font-black text-white mb-6" style="font-family:'Montserrat',sans-serif">
+      <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4 font-montserrat">Contact Us</p>
+      <h1 class="text-5xl md:text-6xl font-black text-white mb-6">
         Let's Start a<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#3B82F6]">Conversation</span>
       </h1>
       <p class="text-white/60 text-lg max-w-xl mx-auto leading-relaxed">
@@ -30,7 +30,7 @@ import Footer from '../components/Footer.astro';
         <div class="lg:col-span-2 space-y-8 fade-up">
           <!-- Direct Contact -->
           <div>
-            <h2 class="text-2xl font-black text-[#0F172A] mb-6" style="font-family:'Montserrat',sans-serif">Get In Touch</h2>
+            <h2 class="text-2xl font-black text-[#0F172A] mb-6">Get In Touch</h2>
             <div class="space-y-5">
               {[
                 {
@@ -85,8 +85,8 @@ import Footer from '../components/Footer.astro';
 
           <!-- Newsletter -->
           <div class="bg-gradient-to-br from-[#0F172A] to-[#1e293b] rounded-2xl p-6">
-            <p class="text-[#10B981] font-semibold text-xs uppercase tracking-widest mb-2">Newsletter</p>
-            <h3 class="text-white font-bold mb-3" style="font-family:'Montserrat',sans-serif">Stay Updated With Our Research</h3>
+            <p class="text-[#10B981] font-semibold text-xs uppercase tracking-widest mb-2 font-montserrat">Newsletter</p>
+            <h3 class="text-white font-bold mb-3">Stay Updated With Our Research</h3>
             <p class="text-white/50 text-sm mb-5">Get our latest reports and insights delivered to your inbox. No spam — only rigour.</p>
             <form id="newsletter-form" class="flex gap-2">
               <input
@@ -100,14 +100,14 @@ import Footer from '../components/Footer.astro';
                 Join
               </button>
             </form>
-            <p id="newsletter-msg" class="text-[#10B981] text-xs mt-2 hidden">✓ You're subscribed!</p>
+            <p id="newsletter-msg" class="text-[#10B981] text-xs mt-2 hidden flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> You're subscribed!</p>
           </div>
         </div>
 
         <!-- RIGHT: Contact Form -->
         <div class="lg:col-span-3 fade-up delay-200">
           <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10">
-            <h2 class="text-2xl font-black text-[#0F172A] mb-2" style="font-family:'Montserrat',sans-serif">Send Us a Message</h2>
+            <h2 class="text-2xl font-black text-[#0F172A] mb-2">Send Us a Message</h2>
             <p class="text-[#334155]/60 text-sm mb-8">Tell us about your philanthropic goals and we'll respond within 48 hours.</p>
 
             <form id="contact-form" class="space-y-6">
@@ -166,7 +166,7 @@ import Footer from '../components/Footer.astro';
                 class="w-full bg-[#0F172A] hover:bg-[#10B981] text-white font-bold py-4 rounded-2xl text-sm transition-all duration-300 hover:scale-[1.01] shadow-lg">
                 Send Message →
               </button>
-              <p id="form-success" class="text-center text-[#10B981] font-semibold text-sm hidden">✓ Message sent! We'll be in touch shortly.</p>
+              <p id="form-success" class="text-center text-[#10B981] font-semibold text-sm hidden flex items-center justify-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Message sent! We'll be in touch shortly.</p>
             </form>
           </div>
         </div>

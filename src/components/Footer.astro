@@ -7,9 +7,9 @@
       <div class="md:col-span-2">
         <div class="flex items-center gap-3 mb-4">
           <div class="w-9 h-9 rounded-lg bg-[#10B981] flex items-center justify-center">
-            <span class="text-white font-bold text-lg" style="font-family:'Montserrat',sans-serif">R</span>
+            <span class="text-white font-bold text-lg font-montserrat">R</span>
           </div>
-          <span class="font-bold text-xl text-white" style="font-family:'Montserrat',sans-serif">
+          <span class="font-bold text-xl text-white font-montserrat">
             Raising<span class="text-[#10B981]">Impact</span>
           </span>
         </div>
@@ -30,7 +30,7 @@
 
       <!-- Quick Links -->
       <div>
-        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-widest" style="font-family:'Montserrat',sans-serif">Navigation</h4>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-widest">Navigation</h4>
         <ul class="space-y-3">
           {[["Home","/"],["About","/about"],["Our Team","/team"],["Contact","/contact"]].map(([label,href])=>(
             <li><a href={href} class="text-sm text-white/60 hover:text-[#10B981] transition-colors">{label}</a></li>
@@ -40,7 +40,7 @@
 
       <!-- Contact -->
       <div>
-        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-widest" style="font-family:'Montserrat',sans-serif">Contact</h4>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-widest">Contact</h4>
         <ul class="space-y-3 text-sm text-white/60">
           <li class="flex items-start gap-2">
             <svg class="w-4 h-4 text-[#10B981] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -55,8 +55,12 @@
     </div>
 
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8">
-      <p class="text-xs text-white/40">&copy; 2024 Raising Impact. All rights reserved.</p>
-      <p class="text-xs text-white/40">Built with rigour, driven by purpose.</p>
+      <p class="text-xs text-white/40">&copy; 2026 Raising Impact. All rights reserved.</p>
+      <div class="flex items-center gap-4 text-xs text-white/40">
+        <a href="/privacy" class="hover:text-[#10B981] transition-colors">Privacy Policy</a>
+        <a href="/terms" class="hover:text-[#10B981] transition-colors">Terms of Service</a>
+        <span>Built with rigour, driven by purpose.</span>
+      </div>
     </div>
   </div>
 </footer>
