@@ -11,7 +11,8 @@ const teamMembers = [
     bio: "Former senior consultant at Sattva with deep expertise in social sector strategy and impact measurement. Vikrant has led engagements with leading Indian foundations on evidence-based program design.",
     linkedin: "https://linkedin.com",
     initials: "VB",
-    color: "from-emerald-600 to-teal-700"
+    color: "from-emerald-600 to-teal-700",
+    image: "/vikrant.jpg"
   },
   {
     name: "Luke Ding",
@@ -20,43 +21,48 @@ const teamMembers = [
     bio: "Previously at Veddis Foundation directing grant strategy and philanthropy advisory. Luke brings global perspective on cost-effective giving with specialized knowledge of South Asian development contexts.",
     linkedin: "https://linkedin.com",
     initials: "LD",
-    color: "from-blue-600 to-indigo-700"
+    color: "from-blue-600 to-indigo-700",
+    image: "/luke.jpg"
   },
   {
-    name: "Priya Sharma",
+    name: "Rukmini Pandit",
     role: "Senior Research Analyst",
     background: "Ex-J-PAL South Asia",
     bio: "Alumna of J-PAL South Asia with expertise in RCT design and causal inference. Priya leads our quantitative research on education and early childhood interventions across India.",
     linkedin: "https://linkedin.com",
     initials: "PS",
-    color: "from-purple-600 to-violet-700"
+    color: "from-purple-600 to-violet-700",
+    image: "/Rukmini.png"
   },
   {
-    name: "Aryan Mehta",
+    name: "Murugan Vasudevan",
     role: "Policy Research Lead",
     background: "Ex-NITI Aayog Fellow",
     bio: "Former NITI Aayog fellow with specialized expertise in policy design and government partnership. Aryan bridges our research with government-scale implementation possibilities.",
     linkedin: "https://linkedin.com",
     initials: "AM",
-    color: "from-orange-600 to-red-700"
+    color: "from-orange-600 to-red-700",
+    image: "/murugan.png"
   },
   {
-    name: "Sunaina Kapoor",
+    name: "Tejaswini Vondivillu",
     role: "Data Science & Analytics",
     background: "Ex-McKinsey Digital",
     bio: "Quantitative analyst formerly at McKinsey's Digital practice. Sunaina builds the cost-effectiveness models and data pipelines that power our research methodology.",
     linkedin: "https://linkedin.com",
     initials: "SK",
-    color: "from-pink-600 to-rose-700"
+    color: "from-pink-600 to-rose-700",
+    image: "/Tejaswini.png"
   },
   {
-    name: "Rahul Nair",
+    name: "Ratish Balakrishnan",
     role: "Field Research Associate",
     background: "Ex-Aga Khan Foundation",
     bio: "Seasoned field researcher with Aga Khan Foundation background. Rahul leads primary data collection and community engagement for our ground-level studies across rural India.",
     linkedin: "https://linkedin.com",
     initials: "RN",
-    color: "from-cyan-600 to-sky-700"
+    color: "from-cyan-600 to-sky-700",
+    image: "/Ratish.png"
   },
 ];
 ---
@@ -110,13 +116,17 @@ const teamMembers = [
         {teamMembers.map((member, i) => (
           <div class={`fade-up delay-${((i % 3 + 1) * 100)} group bg-[#F8FAFC] rounded-3xl overflow-hidden border border-gray-100 hover:border-[#10B981]/40 hover:shadow-xl transition-all duration-300`}>
             <!-- Avatar -->
-            <div class={`h-48 bg-gradient-to-br ${member.color} relative flex items-center justify-center`}>
-              <div class="w-24 h-24 rounded-3xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-xl">
-                <span class="text-white text-3xl font-black font-montserrat">{member.initials}</span>
-              </div>
+            <div class={`h-48 bg-gradient-to-br ${member.color} relative flex items-center justify-center overflow-hidden`}>
+              {member.image ? (
+                <img src={member.image} alt={member.name} class="w-24 h-24 rounded-3xl object-cover shadow-xl relative z-20" />
+              ) : (
+                <div class="w-24 h-24 rounded-3xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-xl relative z-20">
+                  <span class="text-white text-3xl font-black font-montserrat">{member.initials}</span>
+                </div>
+              )}
               <!-- Decorative circles -->
-              <div class="absolute top-4 right-4 w-16 h-16 rounded-full border border-white/20"></div>
-              <div class="absolute bottom-4 left-4 w-10 h-10 rounded-full border border-white/20"></div>
+              <div class="absolute top-4 right-4 w-16 h-16 rounded-full border border-white/20 z-10"></div>
+              <div class="absolute bottom-4 left-4 w-10 h-10 rounded-full border border-white/20 z-10"></div>
             </div>
 
             <div class="p-6">
