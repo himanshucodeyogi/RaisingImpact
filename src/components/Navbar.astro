@@ -1,0 +1,89 @@
+---
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/team", label: "Our Team" },
+  { href: "/contact", label: "Contact" },
+];
+const current = Astro.url.pathname;
+---
+
+<header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="w-9 h-9 rounded-lg bg-[#10B981] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+        <span class="text-white font-bold text-lg" style="font-family:'Montserrat',sans-serif">R</span>
+      </div>
+      <span class="font-bold text-xl text-white" style="font-family:'Montserrat',sans-serif">
+        Raising<span class="text-[#10B981]">Impact</span>
+      </span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-1">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
+            current === link.href || (link.href !== "/" && current.startsWith(link.href))
+              ? "bg-[#10B981] text-white"
+              : "text-white/80 hover:text-white hover:bg-white/10"
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="/contact"
+        class="ml-4 px-5 py-2.5 bg-[#10B981] text-white text-sm font-bold rounded-xl shadow-lg hover:bg-emerald-400 hover:shadow-emerald-400/40 transition-all duration-200"
+      >
+        Partner With Us
+      </a>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button id="menu-btn" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10" aria-label="Menu">
+      <svg class="w-6 h-6" id="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden mt-2 mx-6 bg-[#0F172A]/95 backdrop-blur-md rounded-2xl border border-white/10 p-4">
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-xl text-sm font-semibold transition-all"
+      >
+        {link.label}
+      </a>
+    ))}
+    <a href="/contact" class="block mt-2 px-4 py-3 bg-[#10B981] text-white rounded-xl text-sm font-bold text-center">
+      Partner With Us
+    </a>
+  </div>
+</header>
+
+<script>
+  const navbar = document.getElementById('navbar')!;
+  const menuBtn = document.getElementById('menu-btn')!;
+  const mobileMenu = document.getElementById('mobile-menu')!;
+
+  // Scroll effect
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      navbar.classList.add('bg-[#0F172A]/95', 'backdrop-blur-md', 'shadow-2xl', 'py-2');
+      navbar.classList.remove('py-4');
+    } else {
+      navbar.classList.remove('bg-[#0F172A]/95', 'backdrop-blur-md', 'shadow-2xl', 'py-2');
+      navbar.classList.add('py-4');
+    }
+  });
+
+  // Mobile toggle
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>

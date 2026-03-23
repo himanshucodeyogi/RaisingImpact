@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact" description="Get in touch with Raising Impact to partner on evidence-based philanthropy research.">
+  <Navbar />
+
+  <!-- HERO -->
+  <section class="pt-32 pb-24 bg-[#0F172A] relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#10B981]/10 to-transparent"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4">Contact Us</p>
+      <h1 class="text-5xl md:text-6xl font-black text-white mb-6" style="font-family:'Montserrat',sans-serif">
+        Let's Start a<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#3B82F6]">Conversation</span>
+      </h1>
+      <p class="text-white/60 text-lg max-w-xl mx-auto leading-relaxed">
+        Whether you're a philanthropist, foundation, or researcher — we'd love to explore how rigorous evidence can amplify your impact.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="py-24 bg-[#F8FAFC]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-5 gap-12">
+
+        <!-- LEFT: Info -->
+        <div class="lg:col-span-2 space-y-8 fade-up">
+          <!-- Direct Contact -->
+          <div>
+            <h2 class="text-2xl font-black text-[#0F172A] mb-6" style="font-family:'Montserrat',sans-serif">Get In Touch</h2>
+            <div class="space-y-5">
+              {[
+                {
+                  icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`,
+                  label: "Email",
+                  value: "info@raisingimpact.org",
+                  href: "mailto:info@raisingimpact.org"
+                },
+                {
+                  icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
+                  label: "Location",
+                  value: "New Delhi, India",
+                  href: null
+                },
+                {
+                  icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+                  label: "Response Time",
+                  value: "Within 48 hours",
+                  href: null
+                },
+              ].map(item => (
+                <div class="flex items-start gap-4">
+                  <div class="w-11 h-11 bg-[#10B981]/15 rounded-xl flex items-center justify-center text-[#10B981] flex-shrink-0" set:html={item.icon}></div>
+                  <div>
+                    <p class="text-xs text-[#334155]/50 font-medium uppercase tracking-widest mb-0.5">{item.label}</p>
+                    {item.href
+                      ? <a href={item.href} class="text-[#0F172A] font-semibold hover:text-[#10B981] transition-colors">{item.value}</a>
+                      : <p class="text-[#0F172A] font-semibold">{item.value}</p>
+                    }
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div class="pt-6 border-t border-gray-200">
+            <p class="text-xs text-[#334155]/50 uppercase tracking-widest font-medium mb-4">Follow Our Work</p>
+            <div class="flex gap-3">
+              <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"
+                class="flex items-center gap-2 bg-white border border-gray-200 hover:border-[#10B981] hover:text-[#10B981] text-[#334155] rounded-xl px-4 py-3 text-sm font-semibold transition-all shadow-sm">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                LinkedIn
+              </a>
+              <a href="https://twitter.com" target="_blank" aria-label="Twitter"
+                class="flex items-center gap-2 bg-white border border-gray-200 hover:border-[#10B981] hover:text-[#10B981] text-[#334155] rounded-xl px-4 py-3 text-sm font-semibold transition-all shadow-sm">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L2.25 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Twitter / X
+              </a>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="bg-gradient-to-br from-[#0F172A] to-[#1e293b] rounded-2xl p-6">
+            <p class="text-[#10B981] font-semibold text-xs uppercase tracking-widest mb-2">Newsletter</p>
+            <h3 class="text-white font-bold mb-3" style="font-family:'Montserrat',sans-serif">Stay Updated With Our Research</h3>
+            <p class="text-white/50 text-sm mb-5">Get our latest reports and insights delivered to your inbox. No spam — only rigour.</p>
+            <form id="newsletter-form" class="flex gap-2">
+              <input
+                type="email"
+                id="newsletter-email"
+                placeholder="your@email.com"
+                required
+                class="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-2.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#10B981] transition-colors"
+              />
+              <button type="submit" class="bg-[#10B981] hover:bg-emerald-400 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-colors">
+                Join
+              </button>
+            </form>
+            <p id="newsletter-msg" class="text-[#10B981] text-xs mt-2 hidden">✓ You're subscribed!</p>
+          </div>
+        </div>
+
+        <!-- RIGHT: Contact Form -->
+        <div class="lg:col-span-3 fade-up delay-200">
+          <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10">
+            <h2 class="text-2xl font-black text-[#0F172A] mb-2" style="font-family:'Montserrat',sans-serif">Send Us a Message</h2>
+            <p class="text-[#334155]/60 text-sm mb-8">Tell us about your philanthropic goals and we'll respond within 48 hours.</p>
+
+            <form id="contact-form" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-xs font-semibold text-[#334155] uppercase tracking-widest mb-2">Full Name *</label>
+                  <input
+                    type="text" id="name" name="name" required
+                    placeholder="Your full name"
+                    class="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-[#334155] text-sm focus:outline-none focus:border-[#10B981] focus:ring-2 focus:ring-[#10B981]/20 transition-all"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block text-xs font-semibold text-[#334155] uppercase tracking-widest mb-2">Email Address *</label>
+                  <input
+                    type="email" id="email" name="email" required
+                    placeholder="your@email.com"
+                    class="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-[#334155] text-sm focus:outline-none focus:border-[#10B981] focus:ring-2 focus:ring-[#10B981]/20 transition-all"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="org" class="block text-xs font-semibold text-[#334155] uppercase tracking-widest mb-2">Organization Name</label>
+                <input
+                  type="text" id="org" name="org"
+                  placeholder="Foundation / Company / Individual"
+                  class="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-[#334155] text-sm focus:outline-none focus:border-[#10B981] focus:ring-2 focus:ring-[#10B981]/20 transition-all"
+                />
+              </div>
+
+              <div>
+                <label for="interest" class="block text-xs font-semibold text-[#334155] uppercase tracking-widest mb-2">Area of Interest</label>
+                <select id="interest" name="interest"
+                  class="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-[#334155] text-sm focus:outline-none focus:border-[#10B981] focus:ring-2 focus:ring-[#10B981]/20 transition-all bg-white">
+                  <option value="">Select an area</option>
+                  <option>Philanthropy Advisory</option>
+                  <option>Research Collaboration</option>
+                  <option>Education & ECCE</option>
+                  <option>Health Interventions</option>
+                  <option>Livelihoods & Skilling</option>
+                  <option>General Inquiry</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-xs font-semibold text-[#334155] uppercase tracking-widest mb-2">Message *</label>
+                <textarea
+                  id="message" name="message" rows="5" required
+                  placeholder="Tell us about your philanthropic goals, current programs, or research interests..."
+                  class="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-[#334155] text-sm focus:outline-none focus:border-[#10B981] focus:ring-2 focus:ring-[#10B981]/20 transition-all resize-none"
+                ></textarea>
+              </div>
+
+              <button type="submit" id="submit-btn"
+                class="w-full bg-[#0F172A] hover:bg-[#10B981] text-white font-bold py-4 rounded-2xl text-sm transition-all duration-300 hover:scale-[1.01] shadow-lg">
+                Send Message →
+              </button>
+              <p id="form-success" class="text-center text-[#10B981] font-semibold text-sm hidden">✓ Message sent! We'll be in touch shortly.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Contact form
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const successMsg = document.getElementById('form-success') as HTMLElement;
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    setTimeout(() => {
+      successMsg.classList.remove('hidden');
+      form.reset();
+      submitBtn.textContent = 'Send Message →';
+      submitBtn.disabled = false;
+    }, 1200);
+  });
+
+  // Newsletter
+  const newsletterForm = document.getElementById('newsletter-form') as HTMLFormElement;
+  const newsletterMsg = document.getElementById('newsletter-msg') as HTMLElement;
+  newsletterForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    newsletterMsg.classList.remove('hidden');
+    newsletterForm.reset();
+  });
+</script>

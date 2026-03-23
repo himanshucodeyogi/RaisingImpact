@@ -1,0 +1,194 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About Us" description="Learn about Raising Impact's mission, methodology and journey in evidence-led philanthropy.">
+  <Navbar />
+
+  <!-- HERO -->
+  <section class="pt-32 pb-24 bg-[#0F172A] relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#10B981]/10 to-transparent"></div>
+    <div class="absolute right-0 top-0 w-[600px] h-[600px] rounded-full border border-[#10B981]/10 -translate-y-1/3 translate-x-1/3"></div>
+    <div class="absolute right-20 top-20 w-[400px] h-[400px] rounded-full border border-[#10B981]/8 -translate-y-1/4 translate-x-1/4"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4">About Us</p>
+      <h1 class="text-5xl md:text-6xl font-black text-white max-w-3xl leading-tight mb-6" style="font-family:'Montserrat',sans-serif">
+        Bridging Intent &<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#3B82F6]">Measurable Outcomes</span>
+      </h1>
+      <p class="text-white/60 text-lg max-w-2xl leading-relaxed">
+        We exist to close the gap between the desire to do good and the evidence of actually doing good — one rigorous research project at a time.
+      </p>
+    </div>
+  </section>
+
+  <!-- MISSION & VISION -->
+  <section class="py-24 bg-[#F8FAFC]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="fade-up">
+          <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4">Mission & Vision</p>
+          <h2 class="text-4xl font-black text-[#0F172A] mb-6" style="font-family:'Montserrat',sans-serif">Why We Exist</h2>
+          <p class="text-[#334155] leading-relaxed mb-5">
+            India's philanthropic sector moves billions of rupees annually—yet a significant portion fails to create proportionate impact. Not due to lack of intent, but due to lack of rigour.
+          </p>
+          <p class="text-[#334155] leading-relaxed mb-5">
+            <strong>Raising Impact</strong> was founded to change that narrative. We believe every charitable rupee deserves the rigour that every investment rupee demands.
+          </p>
+          <p class="text-[#334155] leading-relaxed">
+            Our vision is a philanthropic ecosystem in India where decisions are guided by evidence, shaped by data, and measured for real-world outcomes.
+          </p>
+        </div>
+        <div class="fade-up delay-200 grid grid-cols-2 gap-4">
+          {[
+            { title: "Mission", text: "To provide rigorous, independent research that helps philanthropists direct capital toward high-impact causes.", icon: "🎯" },
+            { title: "Vision", text: "An India where evidence-based giving becomes the norm, not the exception.", icon: "🔭" },
+            { title: "Values", text: "Intellectual honesty, radical transparency, cost-consciousness, and genuine curiosity.", icon: "💡" },
+            { title: "Impact", text: "Proven methodologies that have helped philanthropists achieve 17x impact multiples.", icon: "📊" },
+          ].map(item => (
+            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+              <div class="text-3xl mb-3">{item.icon}</div>
+              <h4 class="font-bold text-[#0F172A] mb-2 text-sm" style="font-family:'Montserrat',sans-serif">{item.title}</h4>
+              <p class="text-xs text-[#334155]/70 leading-relaxed">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 fade-up">
+        <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4">Our Process</p>
+        <h2 class="text-4xl font-black text-[#0F172A]" style="font-family:'Montserrat',sans-serif">The Methodology</h2>
+        <p class="text-[#334155]/70 mt-4 max-w-2xl mx-auto">A systematic, three-phase approach to transforming philanthropic intent into verifiable social impact.</p>
+      </div>
+
+      <div class="relative">
+        <!-- Connecting line -->
+        <div class="hidden md:block absolute top-16 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-[#10B981]/20 via-[#10B981] to-[#10B981]/20"></div>
+        <div class="grid md:grid-cols-3 gap-8 relative z-10">
+          {[
+            {
+              step: "01",
+              title: "Data Collection",
+              items: ["Literature review & systematic research", "Field interviews & primary data", "Program documentation analysis", "Baseline metrics establishment"],
+              color: "bg-emerald-500"
+            },
+            {
+              step: "02",
+              title: "Analysis",
+              items: ["Cost-effectiveness modeling", "Causal attribution analysis", "Comparative benchmarking", "Evidence quality assessment"],
+              color: "bg-blue-500"
+            },
+            {
+              step: "03",
+              title: "Action",
+              items: ["Evidence-backed recommendations", "Resource allocation guidance", "Implementation roadmap", "Ongoing monitoring framework"],
+              color: "bg-purple-500"
+            }
+          ].map((phase, i) => (
+            <div class={`fade-up delay-${(i+1)*100} bg-[#F8FAFC] rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all`}>
+              <div class={`w-12 h-12 ${phase.color} rounded-2xl flex items-center justify-center text-white font-black text-sm mb-6`} style="font-family:'Montserrat',sans-serif">{phase.step}</div>
+              <h3 class="text-xl font-black text-[#0F172A] mb-5" style="font-family:'Montserrat',sans-serif">{phase.title}</h3>
+              <ul class="space-y-3">
+                {phase.items.map(item => (
+                  <li class="flex items-start gap-2 text-sm text-[#334155]/70">
+                    <span class="text-[#10B981] mt-0.5">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSPIRATION -->
+  <section class="py-24 bg-[#0F172A]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14 fade-up">
+        <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4">Standing on Giants' Shoulders</p>
+        <h2 class="text-4xl font-black text-white" style="font-family:'Montserrat',sans-serif">Our Inspiration</h2>
+        <p class="text-white/50 mt-4 max-w-2xl mx-auto">We draw inspiration from global leaders in evidence-based philanthropy who have transformed how the world thinks about giving.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {[
+          {
+            org: "GiveWell",
+            tagline: "Evidence-based charity evaluation",
+            desc: "GiveWell's rigorous approach to identifying the most cost-effective charities globally inspired our methodology for evaluating philanthropic opportunities in the South Asian context.",
+            url: "https://givewell.org"
+          },
+          {
+            org: "Founders Pledge",
+            tagline: "High-impact giving for entrepreneurs",
+            desc: "Founders Pledge's model of research-backed giving guidance for high-net-worth individuals directly shaped how we approach our advisory practice for India's philanthropic ecosystem.",
+            url: "https://founderspledge.com"
+          }
+        ].map((item, i) => (
+          <div class={`fade-up delay-${(i+1)*100} bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-[#10B981]/40 transition-all`}>
+            <div class="flex items-center justify-between mb-5">
+              <div>
+                <h3 class="text-2xl font-black text-white" style="font-family:'Montserrat',sans-serif">{item.org}</h3>
+                <p class="text-[#10B981] text-sm font-medium">{item.tagline}</p>
+              </div>
+              <a href={item.url} target="_blank" class="w-10 h-10 bg-white/10 hover:bg-[#10B981] rounded-xl flex items-center justify-center transition-colors">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+            <p class="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY / ECCE -->
+  <section class="py-24 bg-[#F8FAFC]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="fade-up text-center mb-14">
+          <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4">Our Journey</p>
+          <h2 class="text-4xl font-black text-[#0F172A]" style="font-family:'Montserrat',sans-serif">Where It All Began</h2>
+        </div>
+
+        <div class="space-y-8">
+          {[
+            { year: "2021", title: "The Founding Insight", text: "Vikrant Bhargava and Luke Ding, with years of experience at Sattva and Veddis respectively, recognized the critical gap: India's philanthropic sector lacked rigorous, independent research to guide capital allocation.", active: false },
+            { year: "2022", title: "ECCE Pilot Study", text: "Our landmark Early Childhood Care & Education (ECCE) pilot study across three Indian states. We evaluated 6 distinct ECCE interventions, measuring cognitive outcomes, cost-per-beneficiary, and scalability potential. The findings reshaped how several major foundations allocated their education budgets.", active: true },
+            { year: "2023", title: "Scaling Advisory", text: "Expanded our advisory practice to include livelihoods, health, and environment sectors. Developed proprietary cost-effectiveness models tailored to the Indian philanthropic context.", active: false },
+            { year: "2024", title: "Growing Impact", text: "Now advising 50+ philanthropists across India, with research cited by leading foundations. Our methodologies are now influencing sector-wide practices in evidence-based giving.", active: false },
+          ].map((item, i) => (
+            <div class={`fade-up delay-${(i+1)*100} flex gap-6`}>
+              <div class="flex flex-col items-center">
+                <div class={`w-12 h-12 rounded-2xl flex items-center justify-center text-xs font-black flex-shrink-0 ${item.active ? 'bg-[#10B981] text-white shadow-lg shadow-emerald-500/30' : 'bg-white border-2 border-gray-200 text-[#334155]'}`} style="font-family:'Montserrat',sans-serif">{item.year}</div>
+                {i < 3 && <div class="w-px h-8 bg-gray-200 mt-2"></div>}
+              </div>
+              <div class={`pb-8 flex-1 ${item.active ? 'bg-[#10B981]/5 rounded-2xl p-5 border border-[#10B981]/20 -mt-1' : ''}`}>
+                <h4 class="font-bold text-[#0F172A] mb-2" style="font-family:'Montserrat',sans-serif">{item.title}</h4>
+                <p class="text-sm text-[#334155]/70 leading-relaxed">{item.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>

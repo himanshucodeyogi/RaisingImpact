@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const teamMembers = [
+  {
+    name: "Vikrant Bhargava",
+    role: "Co-Founder & Research Lead",
+    background: "Ex-Sattva Consulting",
+    bio: "Former senior consultant at Sattva with deep expertise in social sector strategy and impact measurement. Vikrant has led engagements with leading Indian foundations on evidence-based program design.",
+    linkedin: "https://linkedin.com",
+    initials: "VB",
+    color: "from-emerald-600 to-teal-700"
+  },
+  {
+    name: "Luke Ding",
+    role: "Co-Founder & Advisory Lead",
+    background: "Ex-Veddis Foundation",
+    bio: "Previously at Veddis Foundation directing grant strategy and philanthropy advisory. Luke brings global perspective on cost-effective giving with specialized knowledge of South Asian development contexts.",
+    linkedin: "https://linkedin.com",
+    initials: "LD",
+    color: "from-blue-600 to-indigo-700"
+  },
+  {
+    name: "Priya Sharma",
+    role: "Senior Research Analyst",
+    background: "Ex-J-PAL South Asia",
+    bio: "Alumna of J-PAL South Asia with expertise in RCT design and causal inference. Priya leads our quantitative research on education and early childhood interventions across India.",
+    linkedin: "https://linkedin.com",
+    initials: "PS",
+    color: "from-purple-600 to-violet-700"
+  },
+  {
+    name: "Aryan Mehta",
+    role: "Policy Research Lead",
+    background: "Ex-NITI Aayog Fellow",
+    bio: "Former NITI Aayog fellow with specialized expertise in policy design and government partnership. Aryan bridges our research with government-scale implementation possibilities.",
+    linkedin: "https://linkedin.com",
+    initials: "AM",
+    color: "from-orange-600 to-red-700"
+  },
+  {
+    name: "Sunaina Kapoor",
+    role: "Data Science & Analytics",
+    background: "Ex-McKinsey Digital",
+    bio: "Quantitative analyst formerly at McKinsey's Digital practice. Sunaina builds the cost-effectiveness models and data pipelines that power our research methodology.",
+    linkedin: "https://linkedin.com",
+    initials: "SK",
+    color: "from-pink-600 to-rose-700"
+  },
+  {
+    name: "Rahul Nair",
+    role: "Field Research Associate",
+    background: "Ex-Aga Khan Foundation",
+    bio: "Seasoned field researcher with Aga Khan Foundation background. Rahul leads primary data collection and community engagement for our ground-level studies across rural India.",
+    linkedin: "https://linkedin.com",
+    initials: "RN",
+    color: "from-cyan-600 to-sky-700"
+  },
+];
+---
+
+<Layout title="Our Team" description="Meet the researchers, analysts and advisors behind Raising Impact's evidence-led philanthropy work.">
+  <Navbar />
+
+  <!-- HERO -->
+  <section class="pt-32 pb-24 bg-[#0F172A] relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#10B981]/10 to-transparent"></div>
+    <div class="absolute left-0 bottom-0 w-[500px] h-[500px] rounded-full border border-[#10B981]/8 -translate-x-1/2 translate-y-1/3"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4">Our Team</p>
+      <h1 class="text-5xl md:text-6xl font-black text-white mb-6" style="font-family:'Montserrat',sans-serif">
+        The People Behind<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#3B82F6]">The Research</span>
+      </h1>
+      <p class="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+        A team of researchers, analysts, and policy experts dedicated to evidence-based social change across India.
+      </p>
+    </div>
+  </section>
+
+  <!-- CULTURE NOTE -->
+  <section class="py-16 bg-[#F8FAFC] border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-10 fade-up">
+        <div class="flex-1">
+          <h2 class="text-2xl font-black text-[#0F172A] mb-4" style="font-family:'Montserrat',sans-serif">
+            "A team of researchers and policy experts<br class="hidden md:block"/> dedicated to change."
+          </h2>
+          <p class="text-[#334155]/70 leading-relaxed">
+            We are a deliberately small, senior team — every member brings irreplaceable domain expertise. We believe the best research comes from people who are obsessively curious, intellectually honest, and deeply committed to making the philanthropic sector more effective.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3 md:flex-col md:gap-3 md:min-w-[220px]">
+          {["Research First", "Open Collaboration", "Evidence Wins", "No Sacred Cows"].map(v => (
+            <div class="flex items-center gap-2 bg-white border border-gray-100 rounded-xl px-4 py-3 shadow-sm">
+              <div class="w-2 h-2 rounded-full bg-[#10B981]"></div>
+              <span class="text-sm font-semibold text-[#334155]">{v}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM GRID -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {teamMembers.map((member, i) => (
+          <div class={`fade-up delay-${((i % 3 + 1) * 100)} group bg-[#F8FAFC] rounded-3xl overflow-hidden border border-gray-100 hover:border-[#10B981]/40 hover:shadow-xl transition-all duration-300`}>
+            <!-- Avatar -->
+            <div class={`h-48 bg-gradient-to-br ${member.color} relative flex items-center justify-center`}>
+              <div class="w-24 h-24 rounded-3xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-xl">
+                <span class="text-white text-3xl font-black" style="font-family:'Montserrat',sans-serif">{member.initials}</span>
+              </div>
+              <!-- Decorative circles -->
+              <div class="absolute top-4 right-4 w-16 h-16 rounded-full border border-white/20"></div>
+              <div class="absolute bottom-4 left-4 w-10 h-10 rounded-full border border-white/20"></div>
+            </div>
+
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-1">
+                <div>
+                  <h3 class="font-black text-[#0F172A] text-lg" style="font-family:'Montserrat',sans-serif">{member.name}</h3>
+                  <p class="text-[#10B981] text-sm font-semibold">{member.role}</p>
+                </div>
+                <a href={member.linkedin} target="_blank" aria-label={`${member.name} LinkedIn`}
+                  class="w-9 h-9 bg-[#0F172A] hover:bg-[#10B981] rounded-xl flex items-center justify-center transition-colors flex-shrink-0">
+                  <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+              </div>
+              <div class="inline-block bg-[#0F172A]/8 text-[#334155] text-xs font-semibold px-3 py-1 rounded-full mt-2 mb-4">{member.background}</div>
+              <p class="text-sm text-[#334155]/70 leading-relaxed">{member.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN SECTION -->
+  <section class="py-24 bg-[#0F172A]">
+    <div class="max-w-4xl mx-auto px-6 text-center fade-up">
+      <div class="bg-gradient-to-br from-[#10B981]/15 to-[#3B82F6]/10 border border-white/10 rounded-3xl p-12">
+        <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4">Join Our Team</p>
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-6" style="font-family:'Montserrat',sans-serif">
+          Are You Obsessively Curious<br/>About Social Impact?
+        </h2>
+        <p class="text-white/60 leading-relaxed mb-8 max-w-xl mx-auto">
+          We are always looking for sharp, mission-aligned researchers and analysts. If you believe data should drive philanthropy, we'd love to hear from you.
+        </p>
+        <a href="/contact" class="inline-block px-8 py-4 bg-[#10B981] text-white font-bold rounded-2xl hover:bg-emerald-400 hover:scale-105 transition-all duration-200 shadow-lg shadow-emerald-500/30">
+          Get In Touch →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
