@@ -7,50 +7,58 @@ import Footer from '../components/Footer.astro';
 <Layout title="About Us" description="Learn about Raising Impact's mission, methodology and journey in evidence-led philanthropy.">
   <Navbar />
 
-  <!-- HERO -->
-  <section id="main-content" class="pt-32 pb-24 bg-[#0F172A] relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-[#10B981]/10 to-transparent"></div>
-    <div class="absolute right-0 top-0 w-[600px] h-[600px] rounded-full border border-[#10B981]/10 -translate-y-1/3 translate-x-1/3"></div>
-    <div class="absolute right-20 top-20 w-[400px] h-[400px] rounded-full border border-[#10B981]/8 -translate-y-1/4 translate-x-1/4"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6">
-      <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4 font-montserrat">About Us</p>
+  <!-- HERO — PPTX style dark navy + gold accent -->
+  <section id="main-content" class="pt-36 pb-28 bg-[#0F2440] relative overflow-hidden">
+    <div class="absolute right-0 top-0 h-full w-[40%] pptx-diagonal-bg pointer-events-none"></div>
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#C09D4B 1px, transparent 1px), linear-gradient(90deg, #C09D4B 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <div class="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-transparent via-[#C09D4B]/50 to-transparent"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-6 h-px bg-[#C09D4B]"></div>
+        <span class="text-[#C09D4B] text-xs font-semibold uppercase tracking-[0.2em] font-montserrat">About Us</span>
+      </div>
       <h1 class="text-5xl md:text-6xl font-black text-white max-w-3xl leading-tight mb-6">
-        Bridging Intent &<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#3B82F6]">Measurable Outcomes</span>
+        Bridging Intent &<br/><span class="text-[#C09D4B]">Measurable Outcomes</span>
       </h1>
-      <p class="text-white/60 text-lg max-w-2xl leading-relaxed">
+      <p class="text-white/55 text-lg max-w-2xl leading-relaxed">
         We exist to close the gap between the desire to do good and the evidence of actually doing good — one rigorous research project at a time.
       </p>
     </div>
   </section>
 
-  <!-- MISSION & VISION -->
-  <section class="py-24 bg-[#F8FAFC]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+  <!-- MISSION & VISION — Cream background, clean card grid -->
+  <section class="py-24 bg-[#F9F6F0]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
         <div class="fade-up">
-          <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4 font-montserrat">Mission & Vision</p>
-          <h2 class="text-4xl font-black text-[#0F172A] mb-6">Why We Exist</h2>
-          <p class="text-[#334155] leading-relaxed mb-5">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-6 h-px bg-[#C09D4B]"></div>
+            <span class="text-[#C09D4B] text-xs font-semibold uppercase tracking-[0.2em] font-montserrat">Mission & Vision</span>
+          </div>
+          <h2 class="text-4xl font-black text-[#0F2440] mb-6">Why We Exist</h2>
+          <p class="text-[#2D3A4A] leading-relaxed mb-5">
             India's philanthropic sector moves billions of rupees annually—yet a significant portion fails to create proportionate impact. Not due to lack of intent, but due to lack of rigour.
           </p>
-          <p class="text-[#334155] leading-relaxed mb-5">
+          <p class="text-[#2D3A4A] leading-relaxed mb-5">
             <strong>Raising Impact</strong> was founded to change that narrative. We believe every charitable rupee deserves the rigour that every investment rupee demands.
           </p>
-          <p class="text-[#334155] leading-relaxed">
+          <p class="text-[#2D3A4A] leading-relaxed">
             Our vision is a philanthropic ecosystem in India where decisions are guided by evidence, shaped by data, and measured for real-world outcomes.
           </p>
         </div>
+
         <div class="fade-up delay-200 grid grid-cols-2 gap-4">
           {[
-            { title: "Mission", text: "To provide rigorous, independent research that helps philanthropists direct capital toward high-impact causes.", icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>` },
-            { title: "Vision", text: "An India where evidence-based giving becomes the norm, not the exception.", icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>` },
-            { title: "Values", text: "Intellectual honesty, radical transparency, cost-consciousness, and genuine curiosity.", icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>` },
-            { title: "Impact", text: "Proven methodologies that have helped philanthropists achieve 17x impact multiples.", icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>` },
+            { num: "01", title: "Mission", text: "Provide rigorous, independent research that helps philanthropists direct capital toward high-impact causes." },
+            { num: "02", title: "Vision", text: "An India where evidence-based giving becomes the norm, not the exception." },
+            { num: "03", title: "Values", text: "Intellectual honesty, radical transparency, cost-consciousness, and genuine curiosity." },
+            { num: "04", title: "Impact", text: "Proven methodologies that have helped philanthropists achieve 17x impact multiples." },
           ].map(item => (
-            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div class="w-10 h-10 rounded-xl bg-[#10B981]/15 flex items-center justify-center text-[#10B981] mb-3" set:html={item.icon}></div>
-              <h4 class="font-bold text-[#0F172A] mb-2 text-sm">{item.title}</h4>
-              <p class="text-xs text-[#334155]/70 leading-relaxed">{item.text}</p>
+            <div class="bg-white border border-[#E8E0D0] rounded-xl p-6 hover:border-[#C09D4B]/40 hover:shadow-md transition-all group">
+              <div class="w-9 h-9 rounded-full border-2 border-[#C09D4B] flex items-center justify-center text-[#C09D4B] font-black text-xs mb-4 font-inter group-hover:bg-[#C09D4B] group-hover:text-white transition-all">{item.num}</div>
+              <h4 class="font-black text-[#0F2440] mb-2 text-sm">{item.title}</h4>
+              <p class="text-xs text-[#2D3A4A]/65 leading-relaxed">{item.text}</p>
             </div>
           ))}
         </div>
@@ -58,46 +66,55 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- METHODOLOGY -->
+  <!-- METHODOLOGY — PPTX Slide 3 exact replica: 4 step cards in a row with connecting line -->
   <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="text-center mb-16 fade-up">
-        <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4 font-montserrat">Our Process</p>
-        <h2 class="text-4xl font-black text-[#0F172A]">The Methodology</h2>
-        <p class="text-[#334155]/70 mt-4 max-w-2xl mx-auto">A systematic, three-phase approach to transforming philanthropic intent into verifiable social impact.</p>
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <div class="w-6 h-px bg-[#C09D4B]"></div>
+          <span class="text-[#C09D4B] text-xs font-semibold uppercase tracking-[0.2em] font-montserrat">Our Process</span>
+          <div class="w-6 h-px bg-[#C09D4B]"></div>
+        </div>
+        <h2 class="text-4xl font-black text-[#0F2440] mb-4">The Methodology</h2>
+        <p class="text-[#2D3A4A]/60 max-w-2xl mx-auto text-sm leading-relaxed">A systematic, four-phase approach to transforming philanthropic intent into verifiable social impact—adapted from GiveWell and Founders Pledge methods.</p>
       </div>
 
+      <!-- 4 step cards with horizontal connecting line — PPTX slide 3 -->
       <div class="relative">
-        <!-- Connecting line -->
-        <div class="hidden md:block absolute top-16 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-[#10B981]/20 via-[#10B981] to-[#10B981]/20"></div>
-        <div class="grid md:grid-cols-3 gap-8 relative z-10">
+        <!-- Horizontal connecting line -->
+        <div class="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[#C09D4B]/40 to-transparent z-0"></div>
+
+        <div class="grid md:grid-cols-4 gap-6 relative z-10">
           {[
             {
-              step: "01",
-              title: "Data Collection",
-              items: ["Literature review & systematic research", "Field interviews & primary data", "Program documentation analysis", "Baseline metrics establishment"],
-              color: "bg-emerald-500"
+              num: "01",
+              title: "Cause-Area Research",
+              items: ["Literature review & systematic research", "State & sector analyses", "Baseline metrics establishment", "Priority area identification"],
             },
             {
-              step: "02",
-              title: "Analysis",
-              items: ["Cost-effectiveness modeling", "Causal attribution analysis", "Comparative benchmarking", "Evidence quality assessment"],
-              color: "bg-blue-500"
+              num: "02",
+              title: "Expert Engagement",
+              items: ["Field interviews & primary data", "Expert network validation", "Implementation fidelity checks", "Feasibility assessments"],
             },
             {
-              step: "03",
-              title: "Action",
-              items: ["Evidence-backed recommendations", "Resource allocation guidance", "Implementation roadmap", "Ongoing monitoring framework"],
-              color: "bg-purple-500"
-            }
+              num: "03",
+              title: "Structured Evaluation",
+              items: ["Cost-effectiveness modeling", "Causal attribution analysis", "GiveWell/FP adapted methods", "Evidence quality grading"],
+            },
+            {
+              num: "04",
+              title: "Capital Deployment",
+              items: ["Donor-org matching", "Evidence-backed recommendations", "Implementation roadmap", "Ongoing monitoring framework"],
+            },
           ].map((phase, i) => (
-            <div class={`fade-up delay-${(i+1)*100} bg-[#F8FAFC] rounded-3xl p-8 border border-gray-100 hover:shadow-lg transition-all`}>
-              <div class={`w-12 h-12 ${phase.color} rounded-2xl flex items-center justify-center text-white font-black text-sm mb-6 font-inter`}>{phase.step}</div>
-              <h3 class="text-xl font-black text-[#0F172A] mb-5">{phase.title}</h3>
-              <ul class="space-y-3">
+            <div class={`fade-up delay-${(i+1)*100} bg-[#F9F6F0] border border-[#E8E0D0] rounded-xl p-6 hover:border-[#C09D4B]/50 hover:shadow-lg transition-all duration-300 group`}>
+              <!-- Gold circle number — exact PPTX style -->
+              <div class="w-12 h-12 rounded-full border-2 border-[#C09D4B] flex items-center justify-center text-[#C09D4B] font-black text-sm mb-6 font-inter mx-auto bg-white group-hover:bg-[#C09D4B] group-hover:text-white transition-all duration-300">{phase.num}</div>
+              <h3 class="text-base font-black text-[#0F2440] mb-4 text-center">{phase.title}</h3>
+              <ul class="space-y-2.5">
                 {phase.items.map(item => (
-                  <li class="flex items-start gap-2 text-sm text-[#334155]/70">
-                    <svg class="w-4 h-4 text-[#10B981] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <li class="flex items-start gap-2 text-xs text-[#2D3A4A]/65">
+                    <div class="w-1 h-1 rounded-full bg-[#C09D4B] mt-1.5 flex-shrink-0"></div>
                     {item}
                   </li>
                 ))}
@@ -109,16 +126,20 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- INSPIRATION -->
-  <section class="py-24 bg-[#0F172A]">
-    <div class="max-w-7xl mx-auto px-6">
+  <!-- INSPIRATION — Dark navy, bordered cards -->
+  <section class="py-24 bg-[#0F2440]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="text-center mb-14 fade-up">
-        <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4 font-montserrat">Standing on Giants' Shoulders</p>
-        <h2 class="text-4xl font-black text-white">Our Inspiration</h2>
-        <p class="text-white/50 mt-4 max-w-2xl mx-auto">We draw inspiration from global leaders in evidence-based philanthropy who have transformed how the world thinks about giving.</p>
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <div class="w-6 h-px bg-[#C09D4B]"></div>
+          <span class="text-[#C09D4B] text-xs font-semibold uppercase tracking-[0.2em] font-montserrat">Standing on Giants' Shoulders</span>
+          <div class="w-6 h-px bg-[#C09D4B]"></div>
+        </div>
+        <h2 class="text-4xl font-black text-white mb-4">Our Inspiration</h2>
+        <p class="text-white/45 max-w-2xl mx-auto text-sm">We draw inspiration from global leaders in evidence-based philanthropy who have transformed how the world thinks about giving.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="grid md:grid-cols-2 gap-6">
         {[
           {
             org: "GiveWell",
@@ -133,47 +154,53 @@ import Footer from '../components/Footer.astro';
             url: "https://founderspledge.com"
           }
         ].map((item, i) => (
-          <div class={`fade-up delay-${(i+1)*100} bg-white/5 border border-white/10 rounded-3xl p-8 hover:border-[#10B981]/40 transition-all`}>
+          <div class={`fade-up delay-${(i+1)*100} bg-[#1E3A5A]/60 border border-white/10 rounded-xl p-8 hover:border-[#C09D4B]/40 transition-all`}>
+            <div class="w-8 h-0.5 bg-[#C09D4B] mb-6"></div>
             <div class="flex items-center justify-between mb-5">
               <div>
                 <h3 class="text-2xl font-black text-white">{item.org}</h3>
-                <p class="text-[#10B981] text-sm font-medium font-montserrat">{item.tagline}</p>
+                <p class="text-[#C09D4B] text-xs font-medium font-montserrat uppercase tracking-widest mt-1">{item.tagline}</p>
               </div>
-              <a href={item.url} target="_blank" class="w-10 h-10 bg-white/10 hover:bg-[#10B981] rounded-xl flex items-center justify-center transition-colors">
+              <a href={item.url} target="_blank" class="w-10 h-10 bg-white/10 hover:bg-[#C09D4B] rounded-lg flex items-center justify-center transition-colors">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               </a>
             </div>
-            <p class="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+            <p class="text-white/55 text-sm leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- JOURNEY / ECCE -->
-  <section class="py-24 bg-[#F8FAFC]">
-    <div class="max-w-7xl mx-auto px-6">
+  <!-- JOURNEY / TIMELINE -->
+  <section class="py-24 bg-[#F9F6F0]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="max-w-3xl mx-auto">
         <div class="fade-up text-center mb-14">
-          <p class="text-[#10B981] font-semibold text-sm uppercase tracking-widest mb-4 font-montserrat">Our Journey</p>
-          <h2 class="text-4xl font-black text-[#0F172A]">Where It All Began</h2>
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <div class="w-6 h-px bg-[#C09D4B]"></div>
+            <span class="text-[#C09D4B] text-xs font-semibold uppercase tracking-[0.2em] font-montserrat">Our Journey</span>
+            <div class="w-6 h-px bg-[#C09D4B]"></div>
+          </div>
+          <h2 class="text-4xl font-black text-[#0F2440]">Where It All Began</h2>
         </div>
 
-        <div class="space-y-8">
+        <div class="space-y-6">
           {[
             { year: "2021", title: "The Founding Insight", text: "Vikrant Bhargava and Luke Ding, with years of experience at Sattva and Veddis respectively, recognized the critical gap: India's philanthropic sector lacked rigorous, independent research to guide capital allocation.", active: false },
-            { year: "2022", title: "ECCE Pilot Study", text: "Our landmark Early Childhood Care & Education (ECCE) pilot study across three Indian states. We evaluated 6 distinct ECCE interventions, measuring cognitive outcomes, cost-per-beneficiary, and scalability potential. The findings reshaped how several major foundations allocated their education budgets.", active: true },
+            { year: "2022", title: "ECCE Pilot Study", text: "Our landmark Early Childhood Care & Education (ECCE) pilot study across three Indian states. We evaluated 6 distinct ECCE interventions, measuring cognitive outcomes, cost-per-beneficiary, and scalability potential.", active: true },
             { year: "2023", title: "Scaling Advisory", text: "Expanded our advisory practice to include livelihoods, health, and environment sectors. Developed proprietary cost-effectiveness models tailored to the Indian philanthropic context.", active: false },
             { year: "2024", title: "Growing Impact", text: "Now advising 50+ philanthropists across India, with research cited by leading foundations. Our methodologies are now influencing sector-wide practices in evidence-based giving.", active: false },
           ].map((item, i) => (
             <div class={`fade-up delay-${(i+1)*100} flex gap-6`}>
               <div class="flex flex-col items-center">
-                <div class={`w-12 h-12 rounded-2xl flex items-center justify-center text-xs font-black flex-shrink-0 font-inter ${item.active ? 'bg-[#10B981] text-white shadow-lg shadow-emerald-500/30' : 'bg-white border-2 border-gray-200 text-[#334155]'}`}>{item.year}</div>
-                {i < 3 && <div class="w-px h-8 bg-gray-200 mt-2"></div>}
+                <div class={`w-12 h-12 rounded-full border-2 flex items-center justify-center text-xs font-black flex-shrink-0 font-inter transition-all ${item.active ? 'border-[#C09D4B] bg-[#C09D4B] text-white' : 'border-[#E8E0D0] bg-white text-[#2D3A4A]'}`}>{item.year}</div>
+                {i < 3 && <div class="w-px h-6 bg-[#E8E0D0] mt-2"></div>}
               </div>
-              <div class={`pb-8 flex-1 ${item.active ? 'bg-[#10B981]/5 rounded-2xl p-5 border border-[#10B981]/20 -mt-1' : ''}`}>
-                <h4 class="font-bold text-[#0F172A] mb-2">{item.title}</h4>
-                <p class="text-sm text-[#334155]/70 leading-relaxed">{item.text}</p>
+              <div class={`pb-6 flex-1 ${item.active ? 'bg-white border border-[#C09D4B]/20 rounded-xl p-5 -mt-1' : ''}`}>
+                {item.active && <div class="w-6 h-0.5 bg-[#C09D4B] mb-3"></div>}
+                <h4 class="font-black text-[#0F2440] mb-2">{item.title}</h4>
+                <p class="text-sm text-[#2D3A4A]/65 leading-relaxed">{item.text}</p>
               </div>
             </div>
           ))}
@@ -184,6 +211,18 @@ import Footer from '../components/Footer.astro';
 
   <Footer />
 </Layout>
+
+<style>
+  .pptx-diagonal-bg {
+    background: linear-gradient(
+      150deg,
+      transparent 0%,
+      rgba(192, 157, 75, 0.04) 50%,
+      rgba(192, 157, 75, 0.08) 100%
+    );
+    border-left: 1px solid rgba(192, 157, 75, 0.15);
+  }
+</style>
 
 <script>
   const observer = new IntersectionObserver(
