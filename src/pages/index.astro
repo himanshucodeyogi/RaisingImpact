@@ -7,55 +7,57 @@ import Footer from '../components/Footer.astro';
 <Layout title="Home">
   <Navbar />
 
-  <!-- HERO — PPTX Cover Slide Style -->
+  <!-- HERO -->
   <section id="main-content" class="relative min-h-screen bg-[#0F2440] flex items-center overflow-hidden">
-    <!-- Diagonal gold geometric accent (right side, like PPTX) -->
-    <div class="hidden md:block absolute right-0 top-0 h-full w-[40%] pptx-diagonal-bg pointer-events-none"></div>
-    <div class="hidden md:block absolute right-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#C09D4B]/60 to-transparent" style="right: 40%"></div>
+    <!-- Video Background Ping-Pong Loop -->
+    <div id="hero-vid-container" class="absolute inset-0 w-full h-full bg-[#0F2440]">
+      <video id="hero-vid-b" muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-[800ms] ease-in-out">
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
+      <video id="hero-vid-a" autoplay muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-[800ms] ease-in-out">
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
+    </div>
 
-    <!-- Subtle grid overlay -->
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#C09D4B 1px, transparent 1px), linear-gradient(90deg, #C09D4B 1px, transparent 1px); background-size: 60px 60px;"></div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32 w-full">
-      <div class="max-w-2xl">
-        <!-- Gold badge pill — exactly like PPTX "Case Study" badge -->
-        <div class="inline-flex items-center gap-2 border border-[#C09D4B]/60 rounded-full px-4 py-1.5 mb-8">
-          <div class="w-1.5 h-1.5 rounded-full bg-[#C09D4B]"></div>
-          <span class="text-[#C09D4B] text-xs font-semibold uppercase tracking-[0.2em] font-montserrat">Guiding Philanthropy with Rigour</span>
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-28 md:py-32">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center justify-center gap-2 border border-[#C09D4B]/60 rounded-full px-3 py-1.5 mb-6 md:mb-8">
+          <div class="w-1.5 h-1.5 rounded-full bg-[#C09D4B] flex-shrink-0"></div>
+          <span class="text-[#C09D4B] text-[10px] sm:text-xs font-semibold uppercase tracking-[0.15em] font-montserrat">Guiding Philanthropy with Rigour</span>
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-black text-white leading-[1.05] mb-6">
-          Raising<br/>
-          <span class="text-[#C09D4B]">Impact</span>
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-[1.05] mb-5 md:mb-6">
+          Raising <span class="text-[#C09D4B]">Impact</span>
         </h1>
 
-        <p class="text-lg text-white/60 mb-4 font-light leading-relaxed max-w-xl">
+        <p class="text-base sm:text-lg text-white/60 mb-3 font-light leading-relaxed max-w-xl mx-auto">
           Evidence-led philanthropy research and advisory — helping philanthropists maximize social impact in India.
         </p>
-        <p class="text-base text-[#C09D4B]/80 mb-10 font-montserrat font-semibold tracking-wide">raisingimpact.org</p>
+        <p class="text-sm text-[#C09D4B]/80 mb-8 md:mb-10 font-montserrat font-semibold tracking-wide">raisingimpact.org</p>
 
-        <div class="flex flex-wrap gap-4">
-          <a href="/contact" id="hero-cta-primary" class="pptx-btn-primary px-8 py-4 bg-[#C09D4B] hover:bg-[#D2B980] text-white font-bold rounded-lg text-sm font-montserrat tracking-wide transition-all duration-200 hover:scale-105 shadow-lg shadow-[#C09D4B]/20">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+          <a href="/contact" id="hero-cta-primary" class="text-center px-7 py-3.5 sm:px-8 sm:py-4 bg-[#C09D4B] hover:bg-[#D2B980] text-white font-bold rounded-lg text-sm font-montserrat tracking-wide transition-all duration-200 hover:scale-105 shadow-lg shadow-[#C09D4B]/20">
             Partner With Us →
           </a>
-          <a href="/about" id="hero-cta-secondary" class="px-8 py-4 border border-white/25 hover:border-[#C09D4B]/60 text-white/80 hover:text-white font-semibold rounded-lg text-sm font-montserrat tracking-wide backdrop-blur-sm hover:bg-white/5 transition-all duration-200">
+          <a href="/about" id="hero-cta-secondary" class="text-center px-7 py-3.5 sm:px-8 sm:py-4 border border-white/25 hover:border-[#C09D4B]/60 text-white/80 hover:text-white font-semibold rounded-lg text-sm font-montserrat tracking-wide hover:bg-white/5 transition-all duration-200">
             Our Approach
           </a>
         </div>
       </div>
     </div>
 
-    <!-- Bottom scroll line -->
-    <div class="absolute bottom-8 left-12 flex items-center gap-3 text-white/25 text-xs font-montserrat tracking-widest">
-      <div class="w-12 h-px bg-[#C09D4B]/40"></div>
+    <div class="hidden sm:flex absolute bottom-8 left-8 md:left-12 items-center gap-3 text-white/25 text-xs font-montserrat tracking-widest">
+      <div class="w-10 h-px bg-[#C09D4B]/40"></div>
       <span>SCROLL</span>
     </div>
   </section>
 
-  <!-- STATS — PPTX numbered style -->
-  <section class="bg-[#E8E0D0] py-20">
-    <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+  <!-- STATS -->
+  <section class="bg-[#E8E0D0] py-14 md:py-20">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
         {[
           { num: "01", value: "17x", label: "Average Impact Multiple" },
           { num: "02", value: "100%", label: "Evidence-Led Research" },
@@ -63,64 +65,61 @@ import Footer from '../components/Footer.astro';
           { num: "04", value: "3+", label: "Years of Rigour" },
         ].map((stat) => (
           <div class="fade-up text-center">
-            <div class="w-10 h-10 rounded-full border-2 border-[#C09D4B] flex items-center justify-center text-[#C09D4B] font-black text-xs mx-auto mb-4 font-inter">{stat.num}</div>
-            <div class="text-4xl md:text-5xl font-black text-[#0F2440] mb-2 font-inter">{stat.value}</div>
-            <div class="text-xs text-[#2D3A4A]/60 font-montserrat uppercase tracking-widest leading-relaxed">{stat.label}</div>
+            <div class="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-[#C09D4B] flex items-center justify-center text-[#C09D4B] font-black text-xs mx-auto mb-3 font-inter">{stat.num}</div>
+            <div class="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F2440] mb-1 md:mb-2 font-inter">{stat.value}</div>
+            <div class="text-[10px] sm:text-xs text-[#2D3A4A]/60 font-montserrat uppercase tracking-widest leading-relaxed">{stat.label}</div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- PROCESS — Exactly like PPTX Slide 3: 4 numbered step cards in 2x2 grid -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <!-- Section header with gold top-label -->
-      <div class="mb-16 fade-up">
-        <div class="flex items-center gap-3 mb-4">
+  <!-- PROCESS — 4 step cards -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12">
+      <div class="mb-10 md:mb-16 fade-up">
+        <div class="flex items-center gap-3 mb-3 md:mb-4">
           <div class="w-6 h-px bg-[#C09D4B]"></div>
           <span class="text-[#C09D4B] text-xs font-semibold uppercase tracking-[0.2em] font-montserrat">How We Work</span>
         </div>
-        <h2 class="text-4xl md:text-5xl font-black text-[#0F2440] max-w-lg leading-tight">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F2440] max-w-lg leading-tight">
           We identify high-impact opportunities and connect donors to vetted organisations
         </h2>
       </div>
 
-      <!-- 4-step grid — PPTX Slide 3 layout -->
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
         {[
           {
             num: "01",
             title: "Cause-Area Research",
             desc: "State and sector analyses to identify areas for maximizing philanthropic investment potential.",
-            icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>`
+            icon: `<svg class="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>`
           },
           {
             num: "02",
             title: "Expert Engagement",
             desc: "Experts and field partners validate research, implementation fidelity and feasibility.",
-            icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`
+            icon: `<svg class="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`
           },
           {
             num: "03",
             title: "Structured Evaluation",
             desc: "Cost-effectiveness analysis using adapted GiveWell and Founders Pledge methods.",
-            icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`
+            icon: `<svg class="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`
           },
           {
             num: "04",
             title: "Capital Deployment",
             desc: "Donors matched with vetted, deployment-ready organisations for maximum impact.",
-            icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`
+            icon: `<svg class="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`
           },
         ].map((step, i) => (
-          <div class={`fade-up delay-${(i+1)*100} pptx-step-card group bg-[#F9F6F0] border border-[#E8E0D0] rounded-xl p-8 hover:border-[#C09D4B]/50 hover:shadow-lg transition-all duration-300`}>
-            <div class="flex items-start gap-5">
-              <!-- Gold circle number — exact PPTX style -->
-              <div class="w-12 h-12 rounded-full border-2 border-[#C09D4B] flex items-center justify-center text-[#C09D4B] font-black text-sm flex-shrink-0 font-inter group-hover:bg-[#C09D4B] group-hover:text-white transition-all duration-300">{step.num}</div>
+          <div class={`fade-up delay-${(i+1)*100} group bg-[#F9F6F0] border border-[#E8E0D0] rounded-xl p-5 md:p-8 hover:border-[#C09D4B]/50 hover:shadow-lg transition-all duration-300`}>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#C09D4B] flex items-center justify-center text-[#C09D4B] font-black text-sm flex-shrink-0 font-inter group-hover:bg-[#C09D4B] group-hover:text-white transition-all duration-300">{step.num}</div>
               <div class="flex-1">
-                <div class="text-[#2D3A4A]/40 mb-3" set:html={step.icon}></div>
-                <h3 class="text-xl font-black text-[#0F2440] mb-3">{step.title}</h3>
+                <div class="text-[#2D3A4A]/40 mb-2 md:mb-3" set:html={step.icon}></div>
+                <h3 class="text-base md:text-xl font-black text-[#0F2440] mb-2">{step.title}</h3>
                 <p class="text-[#2D3A4A]/70 text-sm leading-relaxed">{step.desc}</p>
               </div>
             </div>
@@ -130,48 +129,44 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- VALUE PROPS — PPTX Slide 4 style: 3 cards side by side with navy background -->
-  <section class="py-24 bg-[#0F2440] relative overflow-hidden">
-    <!-- Diagonal accent background -->
-    <div class="absolute right-0 top-0 h-full w-[30%] opacity-5" style="background: linear-gradient(135deg, transparent 40%, #C09D4B 40%);"></div>
+  <!-- VALUE PROPS — dark navy, 3 cards -->
+  <section class="py-16 md:py-24 bg-[#0F2440] relative overflow-hidden">
+    <div class="hidden md:block absolute right-0 top-0 h-full w-[30%] opacity-5" style="background: linear-gradient(135deg, transparent 40%, #C09D4B 40%);"></div>
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#C09D4B 1px, transparent 1px), linear-gradient(90deg, #C09D4B 1px, transparent 1px); background-size: 60px 60px;"></div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-      <!-- Header -->
-      <div class="mb-16 fade-up">
-        <div class="flex items-center gap-3 mb-4">
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-12">
+      <div class="mb-10 md:mb-16 fade-up">
+        <div class="flex items-center gap-3 mb-3 md:mb-4">
           <div class="w-6 h-px bg-[#C09D4B]"></div>
           <span class="text-[#C09D4B] text-xs font-semibold uppercase tracking-[0.2em] font-montserrat">Why Raising Impact</span>
         </div>
-        <h2 class="text-4xl md:text-5xl font-black text-white max-w-xl leading-tight">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white max-w-xl leading-tight">
           Structured partnership, deep expertise, close collaboration
         </h2>
       </div>
 
-      <!-- 3 value prop cards — PPTX Slide 4 layout -->
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
         {[
           {
             title: "Communication Cadence",
             desc: "Weekly calls establish a rhythm for research presentations, operational updates, and collaborative problem-solving — keeping the philanthropist fully informed.",
-            icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>`
+            icon: `<svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>`
           },
           {
             title: "Multi-disciplinary Team",
             desc: "Our team combines analysts, sector experts, and senior leaders who bring a strategic ecosystem view across agriculture, health, education, and livelihoods.",
-            icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>`
+            icon: `<svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>`
           },
           {
             title: "Journey with the Philanthropist",
             desc: "The philanthropist partners with RIO to drive key decisions: target beneficiaries, impact thresholds, scale, priority geographies, and implementation models.",
-            icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>`
+            icon: `<svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>`
           },
         ].map((card, i) => (
-          <div class={`fade-up delay-${(i+1)*100} pptx-value-card bg-[#1E3A5A]/60 border border-white/10 rounded-xl p-8 hover:border-[#C09D4B]/40 hover:bg-[#1E3A5A]/80 transition-all duration-300 group`}>
-            <!-- Gold top border line -->
-            <div class="w-8 h-0.5 bg-[#C09D4B] mb-6"></div>
-            <div class="text-[#C09D4B] mb-5" set:html={card.icon}></div>
-            <h3 class="text-lg font-black text-white mb-4 leading-snug">{card.title}</h3>
+          <div class={`fade-up delay-${(i+1)*100} bg-[#1E3A5A]/60 border border-white/10 rounded-xl p-5 md:p-8 hover:border-[#C09D4B]/40 hover:bg-[#1E3A5A]/80 transition-all duration-300`}>
+            <div class="w-8 h-0.5 bg-[#C09D4B] mb-4 md:mb-6"></div>
+            <div class="text-[#C09D4B] mb-3 md:mb-5" set:html={card.icon}></div>
+            <h3 class="text-base md:text-lg font-black text-white mb-3 leading-snug">{card.title}</h3>
             <p class="text-white/55 text-sm leading-relaxed">{card.desc}</p>
           </div>
         ))}
@@ -179,62 +174,40 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- LATEST RESEARCH — Clean card layout -->
-  <section class="py-24 bg-[#F9F6F0]">
-    <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-14 gap-6">
+  <!-- LATEST RESEARCH -->
+  <section class="py-16 md:py-24 bg-[#F9F6F0]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12">
+      <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 md:mb-14 gap-4">
         <div class="fade-up">
-          <div class="flex items-center gap-3 mb-4">
+          <div class="flex items-center gap-3 mb-3">
             <div class="w-6 h-px bg-[#C09D4B]"></div>
             <span class="text-[#C09D4B] text-xs font-semibold uppercase tracking-[0.2em] font-montserrat">Research & Insights</span>
           </div>
-          <h2 class="text-4xl font-black text-[#0F2440]">Latest Reports</h2>
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0F2440]">Latest Reports</h2>
         </div>
-        <a href="/about" class="fade-up text-[#C09D4B] font-semibold text-sm hover:underline flex items-center gap-2 font-montserrat">
+        <a href="/about" class="fade-up text-[#C09D4B] font-semibold text-sm hover:underline flex items-center gap-2 font-montserrat flex-shrink-0">
           View All Research <span>→</span>
         </a>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
         {[
-          {
-            num: "01",
-            tag: "Education",
-            title: "ECCE Pilot Study: Early Childhood Interventions in Rural India",
-            date: "Dec 2024",
-            readTime: "12 min read",
-            excerpt: "Evaluating cost-effectiveness of Early Childhood Care & Education programs across three Indian states.",
-          },
-          {
-            num: "02",
-            tag: "Health",
-            title: "Maternal Health Outcomes Across Income Tiers",
-            date: "Oct 2024",
-            readTime: "9 min read",
-            excerpt: "Analyzing intervention effectiveness for maternal healthcare programs in low-income urban settings.",
-          },
-          {
-            num: "03",
-            tag: "Livelihoods",
-            title: "Skill Development ROI: A Cost-Benefit Analysis",
-            date: "Aug 2024",
-            readTime: "15 min read",
-            excerpt: "Measuring the long-term economic returns of vocational training programs for rural youth.",
-          },
+          { num: "01", tag: "Education", title: "ECCE Pilot Study: Early Childhood Interventions in Rural India", date: "Dec 2024", readTime: "12 min read", excerpt: "Evaluating cost-effectiveness of Early Childhood Care & Education programs across three Indian states." },
+          { num: "02", tag: "Health", title: "Maternal Health Outcomes Across Income Tiers", date: "Oct 2024", readTime: "9 min read", excerpt: "Analyzing intervention effectiveness for maternal healthcare programs in low-income urban settings." },
+          { num: "03", tag: "Livelihoods", title: "Skill Development ROI: A Cost-Benefit Analysis", date: "Aug 2024", readTime: "15 min read", excerpt: "Measuring the long-term economic returns of vocational training programs for rural youth." },
         ].map((card, i) => (
           <div class={`fade-up delay-${(i+1)*100} group bg-white border border-[#E8E0D0] rounded-xl overflow-hidden hover:border-[#C09D4B]/50 hover:shadow-lg transition-all duration-300 cursor-pointer`}>
-            <!-- Top header bar -->
-            <div class="bg-[#0F2440] p-6 relative">
-              <div class="w-10 h-10 rounded-full border-2 border-[#C09D4B] flex items-center justify-center text-[#C09D4B] font-black text-xs font-inter mb-3">{card.num}</div>
+            <div class="bg-[#0F2440] p-5 md:p-6">
+              <div class="w-9 h-9 md:w-10 md:h-10 rounded-full border-2 border-[#C09D4B] flex items-center justify-center text-[#C09D4B] font-black text-xs font-inter mb-2 md:mb-3">{card.num}</div>
               <span class="text-[#C09D4B] text-xs font-semibold uppercase tracking-widest font-montserrat">{card.tag}</span>
             </div>
-            <div class="p-6">
-              <div class="flex items-center gap-3 text-xs text-[#2D3A4A]/40 mb-3 font-inter">
+            <div class="p-5 md:p-6">
+              <div class="flex items-center gap-2 text-xs text-[#2D3A4A]/40 mb-2 font-inter">
                 <span>{card.date}</span><span>·</span><span>{card.readTime}</span>
               </div>
-              <h3 class="font-black text-[#0F2440] mb-3 group-hover:text-[#C09D4B] transition-colors text-base leading-snug">{card.title}</h3>
+              <h3 class="font-black text-[#0F2440] mb-2 group-hover:text-[#C09D4B] transition-colors text-sm md:text-base leading-snug">{card.title}</h3>
               <p class="text-sm text-[#2D3A4A]/60 leading-relaxed">{card.excerpt}</p>
-              <div class="mt-5 flex items-center gap-2 text-[#C09D4B] text-xs font-semibold font-montserrat">
+              <div class="mt-4 flex items-center gap-2 text-[#C09D4B] text-xs font-semibold font-montserrat">
                 <span>Read More</span>
                 <span class="group-hover:translate-x-1 transition-transform">→</span>
               </div>
@@ -245,24 +218,24 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- CTA BANNER — PPTX Gold accent style -->
-  <section class="py-24 bg-[#0F2440] relative overflow-hidden">
-    <div class="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-transparent via-[#C09D4B] to-transparent"></div>
-    <div class="absolute right-0 top-0 h-full w-1.5 bg-gradient-to-b from-transparent via-[#C09D4B]/40 to-transparent"></div>
+  <!-- CTA BANNER -->
+  <section class="py-16 md:py-24 bg-[#0F2440] relative overflow-hidden">
+    <div class="absolute left-0 top-0 h-full w-1 md:w-1.5 bg-gradient-to-b from-transparent via-[#C09D4B] to-transparent"></div>
+    <div class="absolute right-0 top-0 h-full w-1 md:w-1.5 bg-gradient-to-b from-transparent via-[#C09D4B]/40 to-transparent"></div>
 
-    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center fade-up">
-      <div class="flex items-center justify-center gap-3 mb-6">
-        <div class="w-12 h-px bg-[#C09D4B]/50"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center fade-up">
+      <div class="flex items-center justify-center gap-3 mb-5 md:mb-6">
+        <div class="w-10 md:w-12 h-px bg-[#C09D4B]/50"></div>
         <div class="w-2 h-2 rounded-full bg-[#C09D4B]"></div>
-        <div class="w-12 h-px bg-[#C09D4B]/50"></div>
+        <div class="w-10 md:w-12 h-px bg-[#C09D4B]/50"></div>
       </div>
-      <h2 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 md:mb-6 leading-tight">
         Ready to Maximize<br/><span class="text-[#C09D4B]">Your Social Impact?</span>
       </h2>
-      <p class="text-white/50 text-lg mb-10 leading-relaxed">
+      <p class="text-white/50 text-base md:text-lg mb-8 md:mb-10 leading-relaxed">
         Join a growing community of thoughtful philanthropists who make evidence-based giving decisions.
       </p>
-      <a href="/contact" id="cta-partner-btn" class="inline-block px-10 py-5 bg-[#C09D4B] text-white font-bold text-base rounded-lg shadow-xl shadow-[#C09D4B]/20 hover:bg-[#D2B980] hover:scale-105 transition-all duration-200 font-montserrat tracking-wide">
+      <a href="/contact" id="cta-partner-btn" class="inline-block px-8 sm:px-10 py-4 sm:py-5 bg-[#C09D4B] text-white font-bold text-sm md:text-base rounded-lg shadow-xl shadow-[#C09D4B]/20 hover:bg-[#D2B980] hover:scale-105 transition-all duration-200 font-montserrat tracking-wide">
         Start a Conversation →
       </a>
     </div>
@@ -273,20 +246,63 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .pptx-diagonal-bg {
-    background: linear-gradient(
-      150deg,
-      transparent 0%,
-      rgba(192, 157, 75, 0.04) 50%,
-      rgba(192, 157, 75, 0.08) 100%
-    );
+    background: linear-gradient(150deg, transparent 0%, rgba(192, 157, 75, 0.04) 50%, rgba(192, 157, 75, 0.08) 100%);
     border-left: 1px solid rgba(192, 157, 75, 0.15);
   }
 </style>
 
 <script>
+  // Fade up animation observer
   const observer = new IntersectionObserver(
     (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
     { threshold: 0.1 }
   );
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Seamless Video Ping-Pong Loop
+  const vidA = document.getElementById('hero-vid-a') as HTMLVideoElement;
+  const vidB = document.getElementById('hero-vid-b') as HTMLVideoElement;
+
+  if (vidA && vidB) {
+    let activeVid = vidA;
+    let inactiveVid = vidB;
+
+    const checkTime = () => {
+      if (!activeVid.duration) {
+        requestAnimationFrame(checkTime);
+        return;
+      }
+      
+      const timeLeft = activeVid.duration - activeVid.currentTime;
+      
+      // 0.4s before active video ends
+      if (timeLeft <= 0.4 && inactiveVid.paused) {
+        inactiveVid.currentTime = 0;
+        inactiveVid.play().then(() => {
+          // Fade in new video, fade out old
+          inactiveVid.classList.replace('opacity-0', 'opacity-100');
+          activeVid.classList.replace('opacity-100', 'opacity-0');
+          
+          // Pause the old video once strictly after it finishes its transition 
+          // (it might also just end naturally)
+          const oldVid = activeVid;
+          setTimeout(() => {
+            if (oldVid !== activeVid) { // verify it's still inactive
+              oldVid.pause();
+            }
+          }, 800); 
+
+          // Swap roles
+          const temp = activeVid;
+          activeVid = inactiveVid;
+          inactiveVid = temp;
+        }).catch(e => console.error("Video play failed:", e));
+      }
+      
+      requestAnimationFrame(checkTime);
+    };
+    
+    // Start tracking
+    requestAnimationFrame(checkTime);
+  }
 </script>
