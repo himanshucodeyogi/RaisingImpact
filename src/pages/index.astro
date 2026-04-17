@@ -19,23 +19,26 @@ import Footer from '../components/Footer.astro';
       </video>
     </div>
 
+    <!-- Generic dark overlay to ensure text contrast without color tinting -->
+    <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#C09D4B 1px, transparent 1px), linear-gradient(90deg, #C09D4B 1px, transparent 1px); background-size: 60px 60px;"></div>
 
     <div class="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-12 py-12 md:py-32 mt-12 md:mt-0">
       <div class="max-w-3xl mx-auto text-center">
-        <div class="inline-flex items-center justify-center gap-2 border border-[#C09D4B]/60 rounded-full px-3 py-1.5 mb-6 md:mb-8">
-          <div class="w-1.5 h-1.5 rounded-full bg-[#C09D4B] flex-shrink-0"></div>
-          <span class="text-[#C09D4B] text-[10px] sm:text-xs font-semibold uppercase tracking-[0.15em] font-montserrat">Guiding Philanthropy with Rigour</span>
+        <div class="inline-flex items-center justify-center gap-2 bg-white/95 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6 md:mb-8 shadow-md">
+          <div class="w-1.5 h-1.5 rounded-full bg-[#C09D4B] flex-shrink-0 animate-pulse"></div>
+          <span class="text-[#0F2440] text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] font-montserrat">Guiding Philanthropy with Rigour</span>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-[1.05] mb-5 md:mb-6">
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-[1.05] mb-5 md:mb-6 drop-shadow-xl">
           Raising <span class="text-[#C09D4B]">Impact</span>
         </h1>
 
-        <p class="text-base sm:text-lg text-white/60 mb-3 font-light leading-relaxed max-w-xl mx-auto">
+        <p class="text-base sm:text-lg text-white font-medium drop-shadow-lg mb-3 leading-relaxed max-w-xl mx-auto">
           Evidence-led philanthropy research and advisory — helping philanthropists maximize social impact in India.
         </p>
-        <p class="text-sm text-[#C09D4B]/80 mb-8 md:mb-10 font-montserrat font-semibold tracking-wide">raisingimpact.org</p>
+        <p class="text-sm text-[#C09D4B] drop-shadow-md mb-8 md:mb-10 font-montserrat font-bold tracking-wide">raisingimpact.org</p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <a href="/contact" id="hero-cta-primary" class="text-center px-7 py-3.5 sm:px-8 sm:py-4 bg-[#C09D4B] hover:bg-[#D2B980] text-white font-bold rounded-lg text-sm font-montserrat tracking-wide transition-all duration-200 hover:scale-105 shadow-lg shadow-[#C09D4B]/20">
